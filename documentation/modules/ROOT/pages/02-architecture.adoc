@@ -1,4 +1,4 @@
-= Solution Pattern: Name Template
+= Solution Pattern: Event Driven API Management
 :sectnums:
 :sectlinks:
 :doctype: book
