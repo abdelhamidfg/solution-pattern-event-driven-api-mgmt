@@ -53,7 +53,7 @@ oc login --token=<token> --server=<server>
 [.console-input]
 [source,adoc]
 ----
-git clone https://github.com/rh-soln-pattern-event-driven-api/
+git clone https://github.com/rh-soln-pattern-event-driven-api/infra
 ----
 - Run the following command to start the installation and replace the variable with your openshift RWX storage class
 
@@ -229,7 +229,7 @@ image::schema.jpg[width=50%,height=50%]
 [.console-input]
 [source,adoc]
 ----
-curl -X POST  -H "Content-Type: application/json" -d @order.json https://order-event-simulator-webhook-system.%SUBDOMAIN%
+curl -X POST  -H "Content-Type: application/json" -d @webhook-system/order.json https://order-event-simulator-webhook-system.%SUBDOMAIN%
 ----
 The curl command will print the below message in the terminal
 ```
@@ -239,7 +239,12 @@ Request received
 
 image::webhook-completed.jpg[width=70%]
 
-4.Visit statistics page in the developer portal and notice the chart shows one hit to the webhook endpoint.
+4.Since the Webhook Creator service features idempotent processing, repeating the same cURL command within the configured timeout period of the DataGrid cache (10 minutes) will not result in duplicate messages. The screenshot below displays the DataGrid console showing the cache entries.
+
+image::idempotent.jpg[width=70%]
+
+
+5.Visit statistics page in the developer portal and notice the chart shows one hit to the webhook endpoint.
 
 image::dev-portal-statistics.jpg[width=70%]
 
@@ -252,7 +257,7 @@ image::dev-portal-statistics.jpg[width=70%]
 [.console-input]
 [source,adoc]
 ----
-curl -X POST  -H "Content-Type: application/json" -d @orders.json https://order-event-simulator-webhook-system.%SUBDOMAIN%
+curl -X POST  -H "Content-Type: application/json" -d @webhook-system/orders.json https://order-event-simulator-webhook-system.%SUBDOMAIN%
 ----
 The curl command will print the below message in the terminal
 ```
