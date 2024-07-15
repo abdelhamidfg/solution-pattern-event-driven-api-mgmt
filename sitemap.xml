@@ -1,27 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://redhat-solution-patterns.github.io/solution-patterns/solution-pattern-template/01-pattern.html</loc>
-<lastmod>2024-03-26T09:24:23.215Z</lastmod>
+<loc>https://redhat-solution-patterns.github.io/solution-patterns/event-driven-api-mgmt/01-pattern.html</loc>
+<lastmod>2024-07-15T09:57:26.972Z</lastmod>
 </url>
 <url>
-<loc>https://redhat-solution-patterns.github.io/solution-patterns/solution-pattern-template/02-architecture.html</loc>
-<lastmod>2024-03-26T09:24:23.215Z</lastmod>
+<loc>https://redhat-solution-patterns.github.io/solution-patterns/event-driven-api-mgmt/02-architecture.html</loc>
+<lastmod>2024-07-15T09:57:26.972Z</lastmod>
 </url>
 <url>
-<loc>https://redhat-solution-patterns.github.io/solution-patterns/solution-pattern-template/03-demo.html</loc>
-<lastmod>2024-03-26T09:24:23.215Z</lastmod>
+<loc>https://redhat-solution-patterns.github.io/solution-patterns/event-driven-api-mgmt/03-demo.html</loc>
+<lastmod>2024-07-15T09:57:26.972Z</lastmod>
 </url>
 <url>
-<loc>https://redhat-solution-patterns.github.io/solution-patterns/solution-pattern-template/04-workshop.html</loc>
-<lastmod>2024-03-26T09:24:23.215Z</lastmod>
+<loc>https://redhat-solution-patterns.github.io/solution-patterns/event-driven-api-mgmt/developer-resources.html</loc>
+<lastmod>2024-07-15T09:57:26.972Z</lastmod>
 </url>
 <url>
-<loc>https://redhat-solution-patterns.github.io/solution-patterns/solution-pattern-template/developer-resources.html</loc>
-<lastmod>2024-03-26T09:24:23.215Z</lastmod>
-</url>
-<url>
-<loc>https://redhat-solution-patterns.github.io/solution-patterns/solution-pattern-template/index.html</loc>
-<lastmod>2024-03-26T09:24:23.215Z</lastmod>
+<loc>https://redhat-solution-patterns.github.io/solution-patterns/event-driven-api-mgmt/index.html</loc>
+<lastmod>2024-07-15T09:57:26.972Z</lastmod>
 </url>
 </urlset>
