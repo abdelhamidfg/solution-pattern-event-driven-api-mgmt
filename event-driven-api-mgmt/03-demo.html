@@ -247,7 +247,7 @@ podman –version</code></pre>
 </div>
 <div class="listingblock console-input">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-adoc hljs" data-lang="adoc">git clone https://github.com/rh-soln-pattern-event-driven-api/</code></pre>
+<pre class="highlightjs highlight"><code class="language-adoc hljs" data-lang="adoc">git clone https://github.com/rh-soln-pattern-event-driven-api/infra</code></pre>
 </div>
 </div>
 <div class="ulist">
@@ -617,7 +617,7 @@ podman –version</code></pre>
 </div>
 <div class="listingblock console-input">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-adoc hljs" data-lang="adoc">curl -X POST  -H "Content-Type: application/json" -d @order.json https://order-event-simulator-webhook-system.%SUBDOMAIN%</code></pre>
+<pre class="highlightjs highlight"><code class="language-adoc hljs" data-lang="adoc">curl -X POST  -H "Content-Type: application/json" -d @webhook-system/order.json https://order-event-simulator-webhook-system.%SUBDOMAIN%</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -637,7 +637,15 @@ podman –version</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>4.Visit statistics page in the developer portal and notice the chart shows one hit to the webhook endpoint.</p>
+<p>4.Since the Webhook Creator service features idempotent processing, repeating the same cURL command within the configured timeout period of the DataGrid cache (10 minutes) will not result in duplicate messages. The screenshot below displays the DataGrid console showing the cache entries.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/idempotent.jpg" alt="idempotent" width="70%">
+</div>
+</div>
+<div class="paragraph">
+<p>5.Visit statistics page in the developer portal and notice the chart shows one hit to the webhook endpoint.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -655,7 +663,7 @@ podman –version</code></pre>
 </div>
 <div class="listingblock console-input">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-adoc hljs" data-lang="adoc">curl -X POST  -H "Content-Type: application/json" -d @orders.json https://order-event-simulator-webhook-system.%SUBDOMAIN%</code></pre>
+<pre class="highlightjs highlight"><code class="language-adoc hljs" data-lang="adoc">curl -X POST  -H "Content-Type: application/json" -d @webhook-system/orders.json https://order-event-simulator-webhook-system.%SUBDOMAIN%</code></pre>
 </div>
 </div>
 <div class="paragraph">
