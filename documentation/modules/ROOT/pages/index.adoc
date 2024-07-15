@@ -1,14 +1,17 @@
-= Solution Patterns: Template Name
+= Solution Patterns: Event Driven API Management
 :page-layout: home
 :sectnums:
 :sectlinks:
 :doctype: book
+:imagesdir: ../assets/images
 
-A brief introduction of this solution pattern.
+This solution pattern showcases an architecture approach for building event-driven API Management that expands your API Management strategy beyond RESTful APIs into event-driven architecture.
 
-_Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum_
+Rather than the synchronous request-response pattern of RESTful APIs,event-driven APIs facilitate asynchronous communication with pub-sub pattern between the API provider and the API consumers, allowing the API consumer to subscribe to an API product by providing a webhook endpoint to receive events in real time without the need for polling the API server.
 
-*Contributors:* _Your Name(s) here (can add links to your profile)_
+The solution leverages https://www.redhat.com/en/resources/application-foundations-datasheet[Red Hat Application Foundations^] components to build a scalable webhook delivery system. This system pushes internal events from your event broker (Kafka) to your API consumers, allowing you to manage events as an API product by applying API management practices to an event-driven API product.
+
+*Contributors:* Abdelhamid Soliman
 
 ++++
  <br>
@@ -22,7 +25,9 @@ Solutions Patterns help you understand the art of the possible with Red Hat's po
 
 Common use cases that can be address with this architecture are:
 
-- xyz
-- xyz
+- Manage, secure, monitor, monetize and control event-driven APIs using traditional API Management practices.
+- Enable to easily  consume third-party and internal consumer applications through the friendly HTTP protocol by hiding the complexity of internal event broker (kafka)
+- Collaborate, document and self-service event-driven APIs through your developer portal.
+- Increase innovation as app developers (internal/external developers, partners) can build  real-time reactive user interfaces and enable process automation based on internal business events in real time.
 
 include::01-pattern.adoc[]
