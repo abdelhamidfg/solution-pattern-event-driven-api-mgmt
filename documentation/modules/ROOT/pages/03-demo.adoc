@@ -53,7 +53,7 @@ oc login --token=<token> --server=<server>
 [.console-input]
 [source,adoc]
 ----
-git clone https://github.com/rh-soln-pattern-api-versioning/
+git clone https://github.com/rh-soln-pattern-event-driven-api/
 ----
 - Run the following command to start the installation and replace the variable with your openshift RWX storage class
 
