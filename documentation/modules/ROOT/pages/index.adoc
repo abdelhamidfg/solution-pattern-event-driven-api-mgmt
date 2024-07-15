@@ -11,7 +11,7 @@ Rather than the synchronous request-response pattern of RESTful APIs,event-drive
 
 The solution leverages https://www.redhat.com/en/resources/application-foundations-datasheet[Red Hat Application Foundations^] components to build a scalable webhook delivery system. This system pushes internal events from your event broker (Kafka) to your API consumers, allowing you to manage events as an API product by applying API management practices to an event-driven API product.
 
-*Contributors:* Abdelhamid Soliman
+*Contributors:* Abdelhamid Soliman (Red Hat)
 
 ++++
  <br>

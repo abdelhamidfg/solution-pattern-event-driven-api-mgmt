@@ -1,7 +1,8 @@
-= Solution Patterns: Event Driven API Management
+
 :sectnums:
 :sectlinks:
 :doctype: book
+= Solution Patterns: Event Driven API Management
 
 
 = Developer Resources
