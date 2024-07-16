@@ -258,7 +258,7 @@
 <p>The webhook producer uses this key with a cryptographic algorithm like HMAC SHA-256 to create a signature of the webhook payload, which is sent in the header along with the webhook request.</p>
 </li>
 <li>
-<p>When receiving the webhook request, the webhook consumer will perform the same signing approach and compare the result with the request signature header.</p>
+<p>When receiving the webhook request, the consumer will perform the same signing approach and compare the result with the request signature header.</p>
 </li>
 </ol>
 </div>
@@ -271,10 +271,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p>The Webhook delivery system must be able to manage a growing number of webhooks and handle high throughput of messages by using horizontal scaling resources up or down as needed .</p>
+<p>The Webhook delivery system must be able to manage a growing number of webhooks and handle high throughput of messages by using horizontal scaling resources up or down as needed.</p>
 </li>
 <li>
-<p>For cost efficiency and resource optimization <strong>scaling to zero</strong> is required which is a key feature of <strong>serverless</strong> computing architectures, where application components can automatically scale down to zero instances when not in use.</p>
+<p>For cost efficiency and resource optimization, the capability to 'scale to zero' is required. This is a key feature of serverless computing architectures, where application components can automatically scale down to zero instances when not in use.</p>
 </li>
 <li>
 <p>The Webhook delivery system must be optimized for fast message processing and delivery to meet real-time or near-real-time requirements.</p>
@@ -288,13 +288,13 @@
 <div class="sect2">
 <h3 id="_support_of_retry"><a class="anchor" href="#_support_of_retry"></a><a class="link" href="#_support_of_retry">1.3. Support of Retry:</a></h3>
 <div class="paragraph">
-<p>The webhook delivery system must manage the retry of failed messages  (e.g., due to the consumer receiving server being down or returning any response other than 2xx)  by applying exponential backoff policy to avoid overwhelming the receiving consumer server.</p>
+<p>The webhook delivery system must manage the retry of failed messages  (e.g., due to the consumer receiving server being down or returning any response other than 2xx)  by applying an exponential backoff policy to avoid overwhelming the receiving consumer server.</p>
 </div>
 <div class="paragraph">
 <p>This policy increases the interval between retry attempts exponentially, which helps to avoid overwhelming the destination consumer during outages and provides a more efficient approach to managing retries over time.</p>
 </div>
 <div class="paragraph">
-<p>The equation to calculate exponential back off retries :-
+<p>The equation to calculate exponential back-off retries:-
 {interval} + {retry_count} ^ 4</p>
 </div>
 <div class="paragraph">
@@ -359,7 +359,7 @@
 <div class="sect2">
 <h3 id="_avoiding_duplicate_messages"><a class="anchor" href="#_avoiding_duplicate_messages"></a><a class="link" href="#_avoiding_duplicate_messages">1.4. Avoiding duplicate messages:</a></h3>
 <div class="paragraph">
-<p>Since webhook messages may be delivered more than once, which may cause unexpected behavior in consumer applications, the most common approach to avoid this is by using a unique idempotency key for each event (e.g., in the order-created event, the order id can be used). This allows the consumer to track processed keys and avoid reprocessing duplicates using the idempotent consumer pattern.</p>
+<p>Since webhook messages may be delivered more than once, which may cause unexpected behavior in consumer applications, the most common approach to avoid this is by using a unique idempotency key for each event (e.g., in the order-created event, the order ID can be used). This allows the consumer to track processed keys and avoid reprocessing duplicates using the idempotent consumer pattern.</p>
 </div>
 </div>
 <div class="sect2">
@@ -389,13 +389,13 @@
 <p>The webhook delivery system should be deployed as cloud-native microservices.</p>
 </li>
 <li>
-<p>The webhook delivery system should use cloud-native configuration management for effectively managing settings, parameters, and policies.</p>
+<p>The webhook delivery system should employ cloud-native configuration management to effectively manage settings, parameters, and policies.</p>
 </li>
 <li>
-<p>The webhook delivery system should have the capability of integration with different message brokers, caching components and 3scale API Management REST API.</p>
+<p>The webhook delivery system should be capable of integrating with various message brokers, caching components, and the 3scale API Management Admin REST API.</p>
 </li>
 <li>
-<p>The webhook delivery system should be configured to work with any Kafka topic and support payloads in multiple formats, such as JSON, XML, and Avro. It should also be provisined and configured with any event-driven 3scale API product.</p>
+<p>The webhook delivery system should be configured to work with any Kafka topic and support payloads in multiple formats, such as JSON, XML, and Avro. It should also be provisioned and configured with any event-driven 3scale API product.</p>
 </li>
 </ul>
 </div>
@@ -408,29 +408,29 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://www.redhat.com/en/products/application-foundations">Red Hat Application Foundations</a></p>
+<p><a href="https://www.redhat.com/en/products/application-foundations" target="_blank" rel="noopener">Red Hat Application Foundations</a></p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://developers.redhat.com/products/3scale/overview">Red Hat 3scale API Management</a></p>
+<p><a href="https://developers.redhat.com/products/3scale/overview" target="_blank" rel="noopener">Red Hat 3scale API Management</a></p>
 </li>
 <li>
-<p><a href="https://access.redhat.com/products/streams-for-apache-kafka/">Red Hat Streams For Apache Kafka</a></p>
+<p><a href="https://access.redhat.com/products/streams-for-apache-kafka/" target="_blank" rel="noopener">Red Hat Streams For Apache Kafka</a></p>
 </li>
 <li>
-<p><a href="https://access.redhat.com/products/red-hat-amq#broker">Red Hat AMQ Broker</a></p>
+<p><a href="https://access.redhat.com/products/red-hat-amq#broker" target="_blank" rel="noopener">Red Hat AMQ Broker</a></p>
 </li>
 <li>
-<p><a href="https://developers.redhat.com/products/redhat-build-of-apache-camel/overview">Red Hat build of Apache Camel</a></p>
+<p><a href="https://developers.redhat.com/products/redhat-build-of-apache-camel/overview" target="_blank" rel="noopener">Red Hat build of Apache Camel</a></p>
 </li>
 <li>
-<p><a href="https://developers.redhat.com/products/red-hat-data-grid/overview">Red Hat Data Grid</a></p>
+<p><a href="https://developers.redhat.com/products/red-hat-data-grid/overview" target="_blank" rel="noopener">Red Hat Data Grid</a></p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><a href="https://www.redhat.com/en/technologies/cloud-computing/openshift">Red Hat OpenShift</a></p>
+<p><a href="https://www.redhat.com/en/technologies/cloud-computing/openshift" target="_blank" rel="noopener">Red Hat OpenShift</a></p>
 </li>
 </ul>
 </div>
@@ -450,10 +450,10 @@
 <p>API consumers subscribe to an application plan of the order-created event API product through the developer portal, providing their webhook endpoint. Upon successful subscription, the API consumer will receive a MAC secret that can be used for authenticating incoming webhook callbacks.</p>
 </li>
 <li>
-<p>The <strong>Webhook Creator microservice</strong> listens to the “order-created-event” topic in the kafka cluster and produces multiple webhook requests for each subscribed consumer application in the API product by using the 3scale Admin REST API. Each webhook request will be inserted in the “webhookQueue” queue in AMQ broker for each webhook consumer which contains the payload of the kafka message and other header parameters like consumer webhook endpoint, the retry count and MAC secret.</p>
+<p>The <strong>Webhook Creator microservice</strong> listens to the “order-created-event” topic in the Kafka cluster and produces multiple webhook requests for each subscribed consumer application in the API product by using the 3scale Admin REST API. Each webhook request will be inserted in the “webhookQueue” queue in the AMQ broker for each webhook consumer which contains the payload of the Kafka message and other header parameters like consumer webhook endpoint, the retry count, and MAC secret.</p>
 </li>
 <li>
-<p>The <strong>Webhook Dispatcher microservice</strong> listens to the “webhookQueue” queue in AMQ broker cluster and creates an HTTP request to the 3scale  API gateway containing the payload of the webhook. It is also responsible for implementing the retry mechanism for the failed messages using exponential backoff policy.</p>
+<p>The <strong>Webhook Dispatcher microservice</strong> listens to the “webhookQueue” queue in the AMQ broker cluster and creates an HTTP request to the 3scale  API gateway containing the payload of the webhook. It is also responsible for implementing the retry mechanism for failed messages using an exponential backoff policy.</p>
 </li>
 <li>
 <p>When the request comes in the API gateway, a custom policy will calculate the HMAC signature  header and route webhook messages to the consumer’s webhook endpoint.</p>
@@ -471,7 +471,7 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>The API Gateway is used as the single point of egress for the external traffic to secure , route , impose rate limits ,monetize and monitor webhooks calls from the API provider to the consumer webhooks.</p>
+<p>The API Gateway serves as the sole point of egress for external traffic, securing, routing, imposing rate limits, monetizing, and monitoring webhook calls from the API provider to consumer webhooks.</p>
 </div>
 </td>
 </tr>
@@ -480,7 +480,7 @@
 <div class="sect2">
 <h3 id="_architectural_design_decisions"><a class="anchor" href="#_architectural_design_decisions"></a><a class="link" href="#_architectural_design_decisions">3.1. Architectural design decisions</a></h3>
 <div class="paragraph">
-<p>The below section describes the architectural design decisions that helped Globex team for achieving non-functional requirements</p>
+<p>The below section describes the architectural design decisions that helped the Globex team achieve non-functional requirements</p>
 </div>
 <div class="sect3">
 <h4 id="_implementation_framework"><a class="anchor" href="#_implementation_framework"></a><a class="link" href="#_implementation_framework">3.1.1. Implementation Framework</a></h4>
@@ -491,18 +491,18 @@
 <div class="sect3">
 <h4 id="_security_2"><a class="anchor" href="#_security_2"></a><a class="link" href="#_security_2">3.1.2. Security</a></h4>
 <div class="paragraph">
-<p><strong>HMAC SHA-256</strong>  algorthim is chosen as an authentication method for webhook consumers to trust the incoming webhook notifications, which  is a cryptographic hash function for ensuring data integrity and authenticity.
-The 3scale custom policy is used to calculate HMAC header using the <a href="https://docs.redhat.com/en/documentation/red_hat_3scale_api_management/2.14/html/administering_the_api_gateway/apicast-policies#camel-service_standard-policies">Camel service policy extension</a>  implemented using Camel Quarkus.</p>
+<p><strong>The HMAC SHA-256</strong> algorithm is selected as the authentication method to ensure that webhook consumers can trust the incoming notifications. This cryptographic hash function provides data integrity and authenticity.
+The 3scale custom policy is used to calculate the HMAC header using the <a href="https://docs.redhat.com/en/documentation/red_hat_3scale_api_management/2.14/html/administering_the_api_gateway/apicast-policies#camel-service_standard-policies" target="_blank" rel="noopener">Camel service policy extension</a>  implemented using Camel Quarkus.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_scalability"><a class="anchor" href="#_scalability"></a><a class="link" href="#_scalability">3.1.3. Scalability</a></h4>
 <div class="paragraph">
-<p><a href="https://docs.openshift.com/container-platform/4.14/nodes/cma/nodes-cma-autoscaling-custom-install.html">KEDA</a> (Kubernetes Event-Driven Autoscaling) is chosen for scaling the webhook creator and dispatcher services.
+<p><a href="https://docs.openshift.com/container-platform/4.14/nodes/cma/nodes-cma-autoscaling-custom-install.html" target="_blank" rel="noopener">KEDA</a> (Kubernetes Event-Driven Autoscaling) is chosen for scaling the webhook creator and dispatcher services.
 KEDA facilitates more efficient resource usage in Kubernetes environments by allowing services to scale based on actual demand driven by events.</p>
 </div>
 <div class="paragraph">
-<p>The webhook creator service is scaled using the number of the messages on “order-created-event” kafka topic. The Maximum number of replica that can be achieved  is equal to the number of partitions you have in the kafka topic "order-created-event". This limitation is related to kafka principles where each partition in a Kafka topic can be consumed by only one consumer in a consumer group at any given time.
+<p>The webhook creator service scales based on the number of messages in the 'order-created-event' Kafka topic. The Maximum number of replicas that can be achieved is equal to the number of partitions you have in the Kafka topic "order-created-event".This limitation stems from Kafka&#8217;s architecture, where each partition in a Kafka topic can be consumed by only one consumer from a consumer group at any given time.
 The webhook Dispatcher service is scaled using the number of messages on AMQ Broker queue “webhookQueue”.</p>
 </div>
 <div class="paragraph">
@@ -525,8 +525,8 @@ AMQ Broker delayed message feature is used to schedule the retry of failed webho
 <div class="sect3">
 <h4 id="_avoiding_duplicate_messages_2"><a class="anchor" href="#_avoiding_duplicate_messages_2"></a><a class="link" href="#_avoiding_duplicate_messages_2">3.1.5. Avoiding duplicate messages</a></h4>
 <div class="paragraph">
-<p>The webhook creator service uses <a href="https://camel.apache.org/components/4.4.x/eips/idempotentConsumer-eip.html">Idempotent consumer EIP</a> to filter out the duplicate messages using the infinispan/Data Grid repository for better scalability.
-In the case of order-created event, the idempotent key is the order Id which is communicated by the producers as a kafka message header “idempotentKey” rather than in the message body to allow the webhook delivery system to be payload agnostic.</p>
+<p>The webhook creator service uses <a href="https://camel.apache.org/components/4.4.x/eips/idempotentConsumer-eip.html" target="_blank" rel="noopener">Idempotent consumer EIP</a> to filter out the duplicate messages using the infinispan/Data Grid repository for better scalability.
+For the 'order-created' event, the idempotent key is the order ID, which producers communicate as a Kafka message header 'idempotentKey' rather than in the message body. This approach allows the webhook delivery system to remain payload-agnostic.</p>
 </div>
 </div>
 </div>
