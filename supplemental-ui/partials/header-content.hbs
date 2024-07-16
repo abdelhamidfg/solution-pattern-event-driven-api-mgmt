@@ -3,10 +3,9 @@
   <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function () {
       const urlParams = new URLSearchParams(window.location.search);
-      const userId = urlParams.get('USERID');
       const subdomain = urlParams.get('SUBDOMAIN');
-      if (userId) {
-        showUserId(userId, subdomain);
+      if (subdomain) {
+        showUserId(subdomain);
       }
       else {
         showUserIdForm(subdomain);
@@ -14,10 +13,10 @@
     });
 
 
-    function showUserId(userId, subdomain) {
+    function showUserId(subdomain) {
+      
       document.getElementById('navbar-form-empty').style.display = "none";
       document.getElementById('navbar-form-filled').style.display = "flex";
-      document.getElementById('userIdDisplay').textContent = "User ID : " + userId;
       document.getElementById('subdomainDisplay').textContent = "Subdomain : " + subdomain;
     }
 
@@ -29,13 +28,11 @@
     }
 
     function goWithUserId() {
-      elUserIdInput = document.getElementById('userId');
       elSubdomainInput = document.getElementById('subdomain');
-      window.location.search = ('&USERID=' + elUserIdInput.value + '&SUBDOMAIN=' + elSubdomainInput.value);
+      window.location.search = ( '&SUBDOMAIN=' + elSubdomainInput.value);
     }
 
     function recycle() {
-      document.getElementById('userId').value = '';
       document.getElementById('subdomain').value = '';
       window.location.search = ('');
     }
@@ -82,7 +79,6 @@
                 class="fa fa-exclamation-triangle" aria-hidden="true"></i></span>
                 Your Workshop Environment
             <form action="javascript:void(0);" onsu>
-              <input size="20" id="userId" type="text" placeholder="USER ID">
               <input size="20" id="subdomain" type="text" placeholder="Subdomain">
               <button type="hidden" onclick="goWithUserId();">Set</button>
             </form>
@@ -95,8 +91,6 @@
               <span class="navbar-text" style="margin-left: 1rem; margin-right: 1rem;">
                   &nbsp;<i alt="Clear details" title="Clear details" onclick="recycle();" style="color: green;" class="fa fa-recycle" aria-hidden="true"></i>
                 <br>
-                <span id="userIdDisplay"></span> 
-                <span style="color: white; margin-left: 1rem; margin-right: 1rem;">|</span>
                 <span id="subdomainDisplay"></span>
               </span>
             </span>
