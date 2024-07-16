@@ -11,6 +11,7 @@
  Here you find a list of developer resources relevant to this Solution Pattern:
 
 * https://developers.redhat.com/about[{counter:submodule4}. Register^] for Red Hat developers subscription to get access to Red Hat products for personal use at no cost
+* https://developers.redhat.com/products/3scale/overview[Red Hat 3scale API Management]
 * https://developers.redhat.com/products/redhat-build-of-apache-camel/overview[{counter:submodule4}. Red Hat build of Apache Camel^]
 * https://developers.redhat.com/products/amq/overview[{counter:submodule4}. AMQ^]
 * https://www.redhat.com/en/resources/amq-streams-datasheet[{counter:submodule4}. AMQ Streams^]
