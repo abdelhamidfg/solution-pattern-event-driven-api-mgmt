@@ -2,9 +2,11 @@ runtime:
   cache_dir: ./.cache/antora
 
 site:
-  title: Solution Patterns for Cloud Native Architectures
+  title: Solution Patterns from Red Hat
   url: https://redhat-solution-patterns.github.io/solution-patterns/
-  start_page: event-driven-api-mgmt::index.adoc
+  start_page: event-driven-api-aamgmt::index.adoc
+  keys:
+    google_analytics: 'G-21PT8RV6BR'  
 
 content:
   sources:
@@ -23,11 +25,7 @@ ui:
   bundle:
     url: https://github.com/redhat-solution-patterns/course-ui/releases/download/v0.1.16/ui-bundle.zip
     snapshot: true
-  supplemental_files:
-    - path: ./supplemental-ui
-    - path: .nojekyll
-    - path: ui.yml
-      contents: "static_files: [ .nojekyll ]"
+  supplemental_files: ./supplemental-ui
 
 output:
   dir: ./gh-pages
