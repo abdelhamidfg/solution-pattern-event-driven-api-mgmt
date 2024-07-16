@@ -20,13 +20,13 @@ To provision the demo you will perform the following steps :
 Here is the list of tools you need in your local environment so that you can use the automated installation:-
 
 - https://docs.openshift.com/container-platform/4.15/cli_reference/openshift_cli/getting-started-cli.html[OpenShift CLI (oc client)]
-- https://github.com/mikefarah/yq[yq]
-- https://github.com/jqlang/jq[jq]
-- https://podman.io/docs/installation[podman]
+- https://github.com/mikefarah/yq[yq^]
+- https://github.com/jqlang/jq[jq^]
+- https://podman.io/docs/installation[podman^]
 
-Openshift RWX storage class is required for https://access.redhat.com/articles/2798521[3scale System] FileStorage.
+Openshift RWX storage class is required for https://access.redhat.com/articles/2798521[3scale System6] FileStorage.
 
-To check if you have the cli tools, you can open your terminal and use following commands:
+To check if you have the CLI tools, you can open your terminal and use the following commands:
 
 [.console-input]
 [source,adoc]
@@ -98,7 +98,7 @@ The subdomain would look something like this `apps.cluster-name.guid.subdomain.m
 Let’s walk through an overview of the components that have been setup already
 
 * Launch the https://console-openshift-console.%SUBDOMAIN%[OpenShift console^,window=console] and login
-* Review  installed components in each namespace as in below table and animated image
+* Review  installed components in each namespace as in the below table and animated image
 
 .A installed components
 [cols="1a,1a"]
@@ -173,20 +173,20 @@ Webhook delivery system components
 
 image::webhook-system-components.jpg[width=50%]
 
-In the openshift console toplogy view select project webhook-system has below 4 deployments:
+In the openshift console topology view select project webhook-system has below 4 deployments:
 
-* *Webhook-creator* : Camel Quarkus implementation to the webhook creator service.
+* *Webhook-creator*: Camel Quarkus implementation to the webhook creator service.
 * *Webhook-dispatcher*: Camel Quarkus implementation to the Webhook dispatcher service
 * *Camel-proxy*: Camel Quarkus implementation to 3scale custom policy using Camel service policy that implements HMAC policy and provides dynamic routing to the webhook endpoint.
-* *Order-event-simulator*: Camel Quarkus service that produces order created events in kafka topic based on received input HTTP JSON message.
+* *Order-event-simulator*: Camel Quarkus service that produces order-created events in Kafka topic based on received input HTTP JSON message.
 
 [TIP]
 ====
-The webhook-creator and dispatcher services are *scaled to zero* (no pods are running) as KEDA rules are configured using ScaledObject CRD with a scale-to-zero strategy when no messages in Kafka topic or AMQ Broker Queue.
+The webhook-creator and dispatcher services are *scaled to zero* (no pods are running) as KEDA rules are configured using ScaledObject CRD with a scale-to-zero strategy when no messages in the Kafka topic or AMQ Broker Queue.
 ==== 
    
 
-The source code for the webhook system components can be found in this https://github.com/rh-soln-pattern-event-driven-api/integration[repository] 
+The source code for the webhook system components can be found in this https://github.com/rh-soln-pattern-event-driven-api/integration[repository^] 
 
 
 
@@ -195,24 +195,24 @@ The source code for the webhook system components can be found in this https://g
  
 
 === As an API Consumer
-As a Globex's shipping partner I need to create a consumer application to the Order-Created-Event product through the developer portal to register my webhook endpoint to start receive notifications for new created orders to integrate it with internal shipping process.Follow the below steps to update the pre-build created application:-
+As Globex's shipping partner, I need to create a consumer application for the Order-Created-Event product through the developer portal to register my webhook endpoint to start receiving notifications for newly created orders to integrate it with the internal shipping process. Follow the below steps to update the pre-build created application:-
 
 1. Open the https://webhook-apis.%SUBDOMAIN%[developer portal^,window=console] and sign in using john/123456
 2. Click on shipping-unlimited-application
-3. Copy the generated MAC Secret into the clipboard and click on Edit link on the right corner "Edit shipping-unlimited-application"
-4. Edit the Webhook URL text box with this url https://webhook-consumer-shipping-webhook-system-shipping-consumer.%SUBDOMAIN% and click on Update Application button
-5. In the openshift console toplogy view inside webhook-system-shipping-consumer project , click on Edit Deployment
-6. Edit the enviroment variable named "macSecret" with the copied value and click on Save button
+3. Copy the generated MAC Secret into the clipboard and click on the Edit link in the right corner "Edit shipping-unlimited-application"
+4. Edit the Webhook URL text box with this URL https://webhook-consumer-shipping-webhook-system-shipping-consumer.%SUBDOMAIN% and click on the Update Application button
+5. In the Openshift console topology view inside webhook-system-shipping-consumer project, click on Edit Deployment
+6. Edit the environment variable named "macSecret" with the copied value and click on the Save button
 
 image::consumer.gif[width=100%]
 
-API consumers can see the structure of the data that will be sent to the provided webhook endpoint through API documentation section in developer portal ,this includes detailed schemas for the JSON or XML payloads with examples ,secuirty specifications and response codes. Which will allowing developers to prepare their endpoints to correctly parse and utilize the incoming data.
+API consumers can see the structure of the data that will be sent to the provided webhook endpoint through the API documentation section in the developer portal, this includes detailed schemas for the JSON or XML payloads with examples, security specifications, and response codes. This will allow developers to prepare their endpoints to correctly parse and utilize the incoming data.
 
 image::schema.jpg[width=50%,height=50%]
 
 === Testing the solution
 
-1.Review is the content sample of order.json which will be used as a testing data for one below order
+1. Review is the content sample of order.json which will be used as testing data for one below order
 
 ```
 {
@@ -236,24 +236,24 @@ The curl command will print the below message in the terminal
 ```
 Request received
 ```
-3.Check the logs of the *webhook-consumer-shipping* pod, and notice that the pod received the webhook successfully.  
+3. Check the logs of the *webhook-consumer-shipping* pod, and notice that the pod received the webhook successfully.  
 
 image::webhook-completed.jpg[width=70%]
 
-4.Since the Webhook Creator service features idempotent processing, repeating the same cURL command within the configured timeout period of the DataGrid cache (10 minutes) will not result in duplicate messages. The screenshot below displays the DataGrid console showing the cache entries.
+4. Since the Webhook Creator service features idempotent processing, repeating the same cURL command within the configured timeout period of the DataGrid cache (10 minutes) will not result in duplicate messages. The screenshot below displays the DataGrid console showing the cache entries.
 
 image::idempotent.jpg[width=70%]
 
 
-5.Visit statistics page in the developer portal and notice the chart shows one hit to the webhook endpoint.
+5. Visit the statistics page in the developer portal and notice the chart shows one hit to the webhook endpoint.
 
 image::dev-portal-statistics.jpg[width=70%]
 
 === Testing the scalability
 
-1.Review is the content sample of orders.json which has more than 40 orders
+1. Review is the content sample of orders.json which has more than 40 orders
 
-2.Use curl to send HTTP request to the simulator service which will post the testing order to the Kafka topic
+2. Use curl to send HTTP request to the simulator service which will post the testing order to the Kafka topic
 
 [.console-input]
 [source,adoc]
@@ -264,13 +264,13 @@ The curl command will print the below message in the terminal
 ```
 Request received
 ```
-3.Check number of scaled pods for webhook-creator and webhook-dispatcher pods in the toplogy view
+3. Check the number of scaled pods for webhook-creator and webhook-dispatcher pods in the topology view
 
 image::scalability-testing.jpg[width=70%]
 
 
 
-Alternatively you can use oc get pods with watch command to see the scaling up/down of pods as below
+Alternatively, you can use oc get pods with the watch command to see the scaling up/down of pods as below
 
 [.console-input]
 [source,adoc]
@@ -278,13 +278,13 @@ Alternatively you can use oc get pods with watch command to see the scaling up/d
 oc get pods -n webhook-system -w
 ----
 
-After all, messages are consumed, there will be no messages left on the kafka topic or in the AMQ Broker queue. KEDA waits for the cooldown period (in this demo 40 seconds) and then scales down the deployment to zero.
+After all, messages are consumed, there will be no messages left on the Kafka topic or in the AMQ Broker queue. KEDA waits for the cooldown period (in this demo 40 seconds) and then scales down the deployment to zero.
 
 
 == Conclusion
 
-Here are the key takeaways from event-driven API management solution pattern:
+Here are the key takeaways from the event-driven API management solution pattern:
 
-* Today's modern application architectures require more than traditional request-response pattern of REST APIs for  facilitating real-time communication and events, webhooks have become the predominant API pattern for handling asynchronous interactions.
+* Today's modern application architectures require more than the traditional request-response patterns of REST APIs for  facilitating real-time communication and events, webhooks have become the predominant API pattern for handling asynchronous interactions.
 * Red Hat Application Foundations provides flexible architecture choices for building a scalable webhook delivery system, allowing you to select the right component for the job.  
-* Developers can discover , access documentation and subscribe to event-driven API products through the 3scale developer portal just like tradiontal REST APIs.
+* Developers can discover, access documentation, and subscribe to event-driven API products through the 3scale developer portal just like traditional REST APIs.
