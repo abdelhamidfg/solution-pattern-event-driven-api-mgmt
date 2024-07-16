@@ -274,21 +274,21 @@
 <p><a href="https://docs.openshift.com/container-platform/4.15/cli_reference/openshift_cli/getting-started-cli.html">OpenShift CLI (oc client)</a></p>
 </li>
 <li>
-<p><a href="https://github.com/mikefarah/yq">yq</a></p>
+<p><a href="https://github.com/mikefarah/yq" target="_blank" rel="noopener">yq</a></p>
 </li>
 <li>
-<p><a href="https://github.com/jqlang/jq">jq</a></p>
+<p><a href="https://github.com/jqlang/jq" target="_blank" rel="noopener">jq</a></p>
 </li>
 <li>
-<p><a href="https://podman.io/docs/installation">podman</a></p>
+<p><a href="https://podman.io/docs/installation" target="_blank" rel="noopener">podman</a></p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Openshift RWX storage class is required for <a href="https://access.redhat.com/articles/2798521">3scale System</a> FileStorage.</p>
+<p>Openshift RWX storage class is required for <a href="https://access.redhat.com/articles/2798521">3scale System6</a> FileStorage.</p>
 </div>
 <div class="paragraph">
-<p>To check if you have the cli tools, you can open your terminal and use following commands:</p>
+<p>To check if you have the CLI tools, you can open your terminal and use the following commands:</p>
 </div>
 <div class="listingblock console-input">
 <div class="content">
@@ -418,7 +418,7 @@ podman –version</code></pre>
 <p>Launch the <a href="https://console-openshift-console.%SUBDOMAIN%" target="console">OpenShift console</a> and login</p>
 </li>
 <li>
-<p>Review  installed components in each namespace as in below table and animated image</p>
+<p>Review  installed components in each namespace as in the below table and animated image</p>
 </li>
 </ul>
 </div>
@@ -602,12 +602,12 @@ podman –version</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>In the openshift console toplogy view select project webhook-system has below 4 deployments:</p>
+<p>In the openshift console topology view select project webhook-system has below 4 deployments:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Webhook-creator</strong> : Camel Quarkus implementation to the webhook creator service.</p>
+<p><strong>Webhook-creator</strong>: Camel Quarkus implementation to the webhook creator service.</p>
 </li>
 <li>
 <p><strong>Webhook-dispatcher</strong>: Camel Quarkus implementation to the Webhook dispatcher service</p>
@@ -616,7 +616,7 @@ podman –version</code></pre>
 <p><strong>Camel-proxy</strong>: Camel Quarkus implementation to 3scale custom policy using Camel service policy that implements HMAC policy and provides dynamic routing to the webhook endpoint.</p>
 </li>
 <li>
-<p><strong>Order-event-simulator</strong>: Camel Quarkus service that produces order created events in kafka topic based on received input HTTP JSON message.</p>
+<p><strong>Order-event-simulator</strong>: Camel Quarkus service that produces order-created events in Kafka topic based on received input HTTP JSON message.</p>
 </li>
 </ul>
 </div>
@@ -628,20 +628,20 @@ podman –version</code></pre>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>The webhook-creator and dispatcher services are <strong>scaled to zero</strong> (no pods are running) as KEDA rules are configured using ScaledObject CRD with a scale-to-zero strategy when no messages in Kafka topic or AMQ Broker Queue.</p>
+<p>The webhook-creator and dispatcher services are <strong>scaled to zero</strong> (no pods are running) as KEDA rules are configured using ScaledObject CRD with a scale-to-zero strategy when no messages in the Kafka topic or AMQ Broker Queue.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>The source code for the webhook system components can be found in this <a href="https://github.com/rh-soln-pattern-event-driven-api/integration">repository</a></p>
+<p>The source code for the webhook system components can be found in this <a href="https://github.com/rh-soln-pattern-event-driven-api/integration" target="_blank" rel="noopener">repository</a></p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_as_an_api_consumer"><a class="anchor" href="#_as_an_api_consumer"></a><a class="link" href="#_as_an_api_consumer">2.3. As an API Consumer</a></h3>
 <div class="paragraph">
-<p>As a Globex&#8217;s shipping partner I need to create a consumer application to the Order-Created-Event product through the developer portal to register my webhook endpoint to start receive notifications for new created orders to integrate it with internal shipping process.Follow the below steps to update the pre-build created application:-</p>
+<p>As Globex&#8217;s shipping partner, I need to create a consumer application for the Order-Created-Event product through the developer portal to register my webhook endpoint to start receiving notifications for newly created orders to integrate it with the internal shipping process. Follow the below steps to update the pre-build created application:-</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -652,16 +652,16 @@ podman –version</code></pre>
 <p>Click on shipping-unlimited-application</p>
 </li>
 <li>
-<p>Copy the generated MAC Secret into the clipboard and click on Edit link on the right corner "Edit shipping-unlimited-application"</p>
+<p>Copy the generated MAC Secret into the clipboard and click on the Edit link in the right corner "Edit shipping-unlimited-application"</p>
 </li>
 <li>
-<p>Edit the Webhook URL text box with this url <a href="https://webhook-consumer-shipping-webhook-system-shipping-consumer.%SUBDOMAIN%" class="bare">https://webhook-consumer-shipping-webhook-system-shipping-consumer.%SUBDOMAIN%</a> and click on Update Application button</p>
+<p>Edit the Webhook URL text box with this URL <a href="https://webhook-consumer-shipping-webhook-system-shipping-consumer.%SUBDOMAIN%" class="bare">https://webhook-consumer-shipping-webhook-system-shipping-consumer.%SUBDOMAIN%</a> and click on the Update Application button</p>
 </li>
 <li>
-<p>In the openshift console toplogy view inside webhook-system-shipping-consumer project , click on Edit Deployment</p>
+<p>In the Openshift console topology view inside webhook-system-shipping-consumer project, click on Edit Deployment</p>
 </li>
 <li>
-<p>Edit the enviroment variable named "macSecret" with the copied value and click on Save button</p>
+<p>Edit the environment variable named "macSecret" with the copied value and click on the Save button</p>
 </li>
 </ol>
 </div>
@@ -671,7 +671,7 @@ podman –version</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>API consumers can see the structure of the data that will be sent to the provided webhook endpoint through API documentation section in developer portal ,this includes detailed schemas for the JSON or XML payloads with examples ,secuirty specifications and response codes. Which will allowing developers to prepare their endpoints to correctly parse and utilize the incoming data.</p>
+<p>API consumers can see the structure of the data that will be sent to the provided webhook endpoint through the API documentation section in the developer portal, this includes detailed schemas for the JSON or XML payloads with examples, security specifications, and response codes. This will allow developers to prepare their endpoints to correctly parse and utilize the incoming data.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -681,8 +681,12 @@ podman –version</code></pre>
 </div>
 <div class="sect2">
 <h3 id="_testing_the_solution"><a class="anchor" href="#_testing_the_solution"></a><a class="link" href="#_testing_the_solution">2.4. Testing the solution</a></h3>
-<div class="paragraph">
-<p>1.Review is the content sample of order.json which will be used as a testing data for one below order</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Review is the content sample of order.json which will be used as testing data for one below order</p>
+</li>
+</ol>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -712,24 +716,36 @@ podman –version</code></pre>
 <pre class="highlightjs highlight"><code class="language-none hljs">Request received</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>3.Check the logs of the <strong>webhook-consumer-shipping</strong> pod, and notice that the pod received the webhook successfully.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Check the logs of the <strong>webhook-consumer-shipping</strong> pod, and notice that the pod received the webhook successfully.</p>
+</li>
+</ol>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="_images/webhook-completed.jpg" alt="webhook completed" width="70%">
 </div>
 </div>
-<div class="paragraph">
-<p>4.Since the Webhook Creator service features idempotent processing, repeating the same cURL command within the configured timeout period of the DataGrid cache (10 minutes) will not result in duplicate messages. The screenshot below displays the DataGrid console showing the cache entries.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Since the Webhook Creator service features idempotent processing, repeating the same cURL command within the configured timeout period of the DataGrid cache (10 minutes) will not result in duplicate messages. The screenshot below displays the DataGrid console showing the cache entries.</p>
+</li>
+</ol>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="_images/idempotent.jpg" alt="idempotent" width="70%">
 </div>
 </div>
-<div class="paragraph">
-<p>5.Visit statistics page in the developer portal and notice the chart shows one hit to the webhook endpoint.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Visit the statistics page in the developer portal and notice the chart shows one hit to the webhook endpoint.</p>
+</li>
+</ol>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -739,11 +755,15 @@ podman –version</code></pre>
 </div>
 <div class="sect2">
 <h3 id="_testing_the_scalability"><a class="anchor" href="#_testing_the_scalability"></a><a class="link" href="#_testing_the_scalability">2.5. Testing the scalability</a></h3>
-<div class="paragraph">
-<p>1.Review is the content sample of orders.json which has more than 40 orders</p>
-</div>
-<div class="paragraph">
-<p>2.Use curl to send HTTP request to the simulator service which will post the testing order to the Kafka topic</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Review is the content sample of orders.json which has more than 40 orders</p>
+</li>
+<li>
+<p>Use curl to send HTTP request to the simulator service which will post the testing order to the Kafka topic</p>
+</li>
+</ol>
 </div>
 <div class="listingblock console-input">
 <div class="content">
@@ -758,8 +778,12 @@ podman –version</code></pre>
 <pre class="highlightjs highlight"><code class="language-none hljs">Request received</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>3.Check number of scaled pods for webhook-creator and webhook-dispatcher pods in the toplogy view</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Check the number of scaled pods for webhook-creator and webhook-dispatcher pods in the topology view</p>
+</li>
+</ol>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -767,7 +791,7 @@ podman –version</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Alternatively you can use oc get pods with watch command to see the scaling up/down of pods as below</p>
+<p>Alternatively, you can use oc get pods with the watch command to see the scaling up/down of pods as below</p>
 </div>
 <div class="listingblock console-input">
 <div class="content">
@@ -775,7 +799,7 @@ podman –version</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>After all, messages are consumed, there will be no messages left on the kafka topic or in the AMQ Broker queue. KEDA waits for the cooldown period (in this demo 40 seconds) and then scales down the deployment to zero.</p>
+<p>After all, messages are consumed, there will be no messages left on the Kafka topic or in the AMQ Broker queue. KEDA waits for the cooldown period (in this demo 40 seconds) and then scales down the deployment to zero.</p>
 </div>
 </div>
 </div>
@@ -784,18 +808,18 @@ podman –version</code></pre>
 <h2 id="_conclusion"><a class="anchor" href="#_conclusion"></a><a class="link" href="#_conclusion">3. Conclusion</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Here are the key takeaways from event-driven API management solution pattern:</p>
+<p>Here are the key takeaways from the event-driven API management solution pattern:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Today&#8217;s modern application architectures require more than traditional request-response pattern of REST APIs for  facilitating real-time communication and events, webhooks have become the predominant API pattern for handling asynchronous interactions.</p>
+<p>Today&#8217;s modern application architectures require more than the traditional request-response patterns of REST APIs for  facilitating real-time communication and events, webhooks have become the predominant API pattern for handling asynchronous interactions.</p>
 </li>
 <li>
 <p>Red Hat Application Foundations provides flexible architecture choices for building a scalable webhook delivery system, allowing you to select the right component for the job.</p>
 </li>
 <li>
-<p>Developers can discover , access documentation and subscribe to event-driven API products through the 3scale developer portal just like tradiontal REST APIs.</p>
+<p>Developers can discover, access documentation, and subscribe to event-driven API products through the 3scale developer portal just like traditional REST APIs.</p>
 </li>
 </ul>
 </div>
