@@ -24,7 +24,7 @@ Here is the list of tools you need in your local environment so that you can use
 - https://github.com/jqlang/jq[jq^]
 - https://podman.io/docs/installation[podman^]
 
-Openshift RWX storage class is required for https://access.redhat.com/articles/2798521[3scale System6] FileStorage.
+Openshift RWX storage class is required for https://access.redhat.com/articles/2798521[3scale System^] FileStorage.
 
 To check if you have the CLI tools, you can open your terminal and use the following commands:
 
@@ -48,7 +48,7 @@ podman –version
 oc login --token=<token> --server=<server>
 ----
 
-- Clone the scripts as follows in an appropriate folder in your local enviroment
+- Clone the scripts as follows in an appropriate folder in your local environment
 
 [.console-input]
 [source,adoc]
@@ -160,11 +160,11 @@ image::enviroment.gif[width=100%]
 
 === As an API provider
 
-The installation script uses 3scale operator cabaility to create "Order-Created-Event" product artifacts (backend,mapping rules,policy configuration,application plans,ActiveDocs) ,
+The installation script uses 3scale operator capability to create "Order-Created-Event" product artifacts (backend, mapping rules, policy configuration, application plans, ActiveDocs),
 
 1. Open the https://webhook-apis-admin.%SUBDOMAIN%[admin portal^,window=admin-portal] and sign in using admin/admin
-2. Click on "Order-Created_Event" product in the dashboard page
-3. Review the structure of the event driven product as in the below animated screenshots 
+2. Click on "Order-Created_Event" product on the dashboard page
+3. Review the structure of the event-driven product as in the below-animated screenshots 
 
 image::admin-portal.gif[width=100%]
 
@@ -225,7 +225,7 @@ image::schema.jpg[width=50%,height=50%]
 }
 ```
 
-2.Use curl to send HTTP request to the simulator service which will post the testing order to the Kafka topic
+2. Use curl to send HTTP request to the simulator service which will post the testing order to the Kafka topic
 
 [.console-input]
 [source,adoc]
