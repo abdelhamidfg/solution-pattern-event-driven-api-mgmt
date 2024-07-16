@@ -125,7 +125,7 @@ image::architecture-2x.png[width=100%]
 
 [TIP]
 ====
-The API Gateway serves as the sole point of egress for external traffic, securing, routing, imposing rate limits, monetizing, and monitoring webhook calls from the API provider to consumer webhooks.
+The API Gateway serves as the single point of egress for external traffic, securing, routing, imposing rate limits, monetizing, and monitoring webhook calls from the API provider to consumer webhooks.
 
 ====
 
