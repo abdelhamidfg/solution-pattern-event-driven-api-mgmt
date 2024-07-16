@@ -234,10 +234,10 @@
 <h2 id="_the_story_behind_this_solution_pattern"><a class="anchor" href="#_the_story_behind_this_solution_pattern"></a>The story behind this solution pattern</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This solution pattern extends Globex, a fictitious retail store which started the journey to event-driven architecture and has already adopted Kafka as an event broker and 3scale as an API management solution for REST APIs.</p>
+<p>This solution pattern extends Globex, a fictitious retail store that started the journey to event-driven architecture and has already adopted Kafka as an event broker and 3scale as an API management solution for REST APIs.</p>
 </div>
 <div class="paragraph">
-<p>Globex wants to extend their eCommerce system to allow async real-time APIs and avoid the current pains of polling REST APIs (request-response communication pattern) for events.</p>
+<p>Globex wants to extend its eCommerce system to allow async real-time APIs and avoid the current pains of polling REST APIs (request-response communication pattern) for events.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -250,7 +250,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Manage an event-driven API product in the API Management for the event message occurred in a kafka topic. e.g. When the order has been created in the system a new record will be placed in the order-created topic to represent the new order.</p>
+<p>Manage an event-driven API product in the API Management for the event message that occurred in a Kafka topic. e.g. When the order has been created in the system a new record will be placed in the order-created topic to represent the new order.</p>
 </li>
 <li>
 <p>To allow discoverability and self-service access to the order event with a schema based on the OpenAPI specification through the developer portal.</p>
@@ -263,10 +263,10 @@
 <h2 id="_the_solution"><a class="anchor" href="#_the_solution"></a>The Solution</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Globex’s architecture team has decided to leverage the API Management solution for real-time event-driven asynchronous APIs by exposing internal events in the existing event broker (kafka) to consumers through webhook callbacks.</p>
+<p>Globex’s architecture team has decided to leverage the API Management solution for real-time event-driven asynchronous APIs by exposing internal events in the existing event broker (Kafka) to consumers through webhook callbacks.</p>
 </div>
 <div class="paragraph">
-<p><a href="https://www.redhat.com/en/topics/automation/what-is-a-webhook">A webhook</a> is an HTTP request that sends data to the API Consumers through the registered endpoints, where no data is expected in the response. It is a one-way push of data to notify them of the event that has occurred. A webhook is usually an HTTP POST with a JSON payload that expects a 2xx response to acknowledge receipt of the payload.</p>
+<p><a href="https://www.redhat.com/en/topics/automation/what-is-a-webhook" target="_blank" rel="noopener">A webhook</a> is an HTTP request that sends data to the API Consumers through the registered endpoints, where no data is expected in the response. It is a one-way push of data to notify them of the event that has occurred. A webhook is usually an HTTP POST with a JSON payload that expects a 2xx response to acknowledge receipt of the payload.</p>
 </div>
 <div class="imageblock">
 <div class="content">
